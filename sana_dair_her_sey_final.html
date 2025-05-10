@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana Dair Her Şey</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff0f5;
+            color: #333;
+            margin: 0;
+            padding: 2rem;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #c71585;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            background-color: #ffffffd9;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            display: none;
+            margin-top: 2rem;
+        }
+        .question.active {
+            display: block;
+        }
+        .feedback {
+            margin-top: 1rem;
+            color: red;
+            font-weight: bold;
+        }
+        .result {
+            margin-top: 2rem;
+            font-weight: bold;
+            color: green;
+        }
+        button {
+            background-color: #c71585;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        ul {
+            padding-left: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Sana Dair Her Şey</h1>
+        <p>Hoş geldin karıcım, biricik aşkım</p>
+        <p>Bu bilet sana özel. Bu sayfa da öyle. En çok da benim aşkım sana özel. Seni tanıdığım için kendimi çok şanslı hissediyorum.</p>
+        <p>İyi ki o öğlen terasa sigara içmeye çıkıp seni görmüşüm. Ya sigara içmeseydim? Yoksa senin gibi birinden mahrum kalacaktım... sadece düşüncesi bile kalbimi sıkıştırıyor.</p>
+        <p>Senden bahsederken hep yüzüm gülüyor, yanaklarım ağrıyor, seni gördüğümde hep kalbim hızlı atmaya başlıyor, bütün şarkılar bana seni hatırlatıyor.</p>
+        <p>Sadece iyi anlarımda değil sıkıntılı anlarımda da yanımda olduğun için, bundan sonrasında da yanımda olacağının sinyallerini verdiğin için sonsuz teşekkür ederim.</p>
+        <p>Hep ama hep götle don olma dileğiyle seni çok seviyorum aşkım.</p>
+
+        <p>Sana tek bir hediyem olduğunu düşünmedin herhalde... Aşağıdaki promosyonları biletin arkasına şımarma diye eklemedim. Seni çok seviyorum &lt;3</p>
+
+        <div class="promosyonlar">
+            <ul>
+                <li>Bir kereliğine yanağımı doyasıya ısırabilirsin (biraz ikna yoluyla bu sayı 3'e 5'e 10'a da çıkabilir).</li>
+                <li>Sana ettiğim iltifatlara bir kereliğine kendini kötülemeden karşılık verebilirsin. Bu hakkı kullandıktan sonra "aşkım çok güzelsin..." gibi fazlasıyla hak ettiğin iltifatlar ettiğimde sadece teşekkür edip hayatına devam etmelisin.</li>
+                <li>Eve atmak şartı ile bir kereliğine bütün o merak ettiğin cinsel fantazilerini kendi üzerimde sesimi çıkartmadan denetme hakkı veriyorum (bu da sana benden bir kıyak ;) ).</li>
+            </ul>
+        </div>
+
+        <div class="quiz">
+            <h2>Aşkım şimdi geldik ikinci hediyene:</h2>
+            <p>Bu hediye öyle ilki gibi kolay olmayacak. Birkaç soru cevaplandırman lazım aşk bahçemin en güzel çiçeği (merak etme zor sorular koymadım)</p>
+
+            <form id="quizForm">
+                <div class="question active" id="q1">
+                    <p><strong>First date tarihimiz</strong></p>
+                    <label><input type="radio" name="q1" value="A"> A) 29 Eylül</label><br>
+                    <label><input type="radio" name="q1" value="B"> B) 8 Ekim</label><br>
+                    <label><input type="radio" name="q1" value="C"> C) 12 Ekim</label>
+                    <div class="feedback" id="f1"></div>
+                    <button type="button" onclick="checkAnswer('q1', 'C')">Cevabı Onayla</button>
+                </div>
+
+                <div class="question" id="q2">
+                    <p><strong>Ortak şarkımızın adı</strong></p>
+                    <label><input type="radio" name="q2" value="A"> A) Still loving you</label><br>
+                    <label><input type="radio" name="q2" value="B"> B) Nothing else matters</label><br>
+                    <label><input type="radio" name="q2" value="C"> C) Prisoner of your eyes</label>
+                    <div class="feedback" id="f2"></div>
+                    <button type="button" onclick="checkAnswer('q2', 'A')">Cevabı Onayla</button>
+                </div>
+
+                <div class="question" id="q3">
+                    <p><strong>Banlandığımız kafenin ismi</strong></p>
+                    <label><input type="radio" name="q3" value="A"> A) Romesta</label><br>
+                    <label><input type="radio" name="q3" value="B"> B) Mackbear</label><br>
+                    <label><input type="radio" name="q3" value="C"> C) Arabica</label>
+                    <div class="feedback" id="f3"></div>
+                    <button type="button" onclick="checkAnswer('q3', 'B')">Cevabı Onayla</button>
+                </div>
+
+                <div class="question" id="q4">
+                    <p><strong>Doğum günümü kutladığımız barın ismi</strong></p>
+                    <label><input type="radio" name="q4" value="A"> A) Haymatlos</label><br>
+                    <label><input type="radio" name="q4" value="B"> B) Müjgan</label><br>
+                    <label><input type="radio" name="q4" value="C"> C) Beste</label>
+                    <div class="feedback" id="f4"></div>
+                    <button type="button" onclick="checkAnswer('q4', 'C')">Cevabı Onayla</button>
+                </div>
+
+                <div class="result" id="result" style="display:none;">
+                    Aşkım benim bee helal olsun, muck<br>Tebrik ederim karıcım, testi geçeceğini biliyodum.<br><br>
+                    Seni çok seviyorum sevgilim, iyisiyle kötüsüyle 7. ayımız kutlu olsun.<br><br>
+                    Sonsuz aşkla kodlandı.
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function checkAnswer(questionId, correctAnswer) {
+            const form = document.forms["quizForm"];
+            const current = form[questionId].value;
+            const feedback = document.getElementById("f" + questionId.substring(1));
+            if (current === correctAnswer) {
+                feedback.innerHTML = "";
+                document.getElementById(questionId).classList.remove("active");
+                const nextIdNum = parseInt(questionId.substring(1)) + 1;
+                const next = document.getElementById("q" + nextIdNum);
+                if (next) {
+                    next.classList.add("active");
+                } else {
+                    document.getElementById("result").style.display = "block";
+                }
+            } else {
+                feedback.innerHTML = "Hmm… aşkım bi kere daha istersen :)";
+            }
+        }
+    </script>
+</body>
+</html>
